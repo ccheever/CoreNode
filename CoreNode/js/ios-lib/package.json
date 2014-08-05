@@ -1,0 +1,11 @@
+{
+  "name": "ios-lib",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "native-buffer-browserify": "^2.1.4",
+    "tty-browserify": "^0.0.0",
+    "zlib-browserify": "^0.0.3"
+  }
+}

@@ -1,0 +1,13 @@
+#ifdef __OBJC__
+    @import Foundation;
+    @import JavaScriptCore;
+    @import UIKit;
+#endif
+
+#import <CocoaLumberjack/DDLog.h>
+#import <PromiseKit/PromiseKit.h>
+#if defined(DEBUG)
+    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+    static const int ddLogLevel = LOG_LEVEL_WARN;
+#endif

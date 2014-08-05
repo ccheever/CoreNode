@@ -1,0 +1,15 @@
+{
+  "name": "corenode-tools",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tools to generate and work with Core Node",
+  "keywords": [
+    "corenode"
+  ],
+  "author": "650 Industries",
+  "license": "Copyright 2014-present 650 Industries. All rights reserved.",
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-concat": "^2.3.3"
+  }
+}
