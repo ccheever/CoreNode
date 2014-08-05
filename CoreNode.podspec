@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
                    modules as long as they don't use native bindings we don't yet
                    support and aren't native modules themselves.
                    DESC
-  s.homepage     = "http://sixfivezero.net"
+  s.homepage     = "http://corenodejs.org"
   s.license      = ''
-  s.author       = "650 Industries"
+  s.author       = "CoreNode Team"
   s.platform     = :ios, '7.0'
 
   s.dependency 'CocoaLumberjack', '~> 1.9'
