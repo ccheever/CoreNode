@@ -1,0 +1,6 @@
+FRAMEWORK_SEARCH_PATHS = "${PODS_ROOT}/SparkInspector"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 $(inherited) PMK_UNTIL=1 $(inherited) PMK_WHEN=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/CocoaLumberjack" "${PODS_ROOT}/Headers/CoreNode" "${PODS_ROOT}/Headers/PromiseKit" "${PODS_ROOT}/Headers/SparkInspector" "${PODS_ROOT}/Headers/uv"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/CocoaLumberjack" -isystem "${PODS_ROOT}/Headers/CoreNode" -isystem "${PODS_ROOT}/Headers/PromiseKit" -isystem "${PODS_ROOT}/Headers/SparkInspector" -isystem "${PODS_ROOT}/Headers/uv"
+OTHER_LDFLAGS = -ObjC -lz -framework Foundation -framework QuartzCore -framework SparkInspector
+PODS_ROOT = ${SRCROOT}/../Pods

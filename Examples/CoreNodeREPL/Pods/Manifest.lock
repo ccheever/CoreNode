@@ -1,0 +1,42 @@
+PODS:
+  - CocoaLumberjack (1.9.1):
+    - CocoaLumberjack/Extensions
+  - CocoaLumberjack/Core (1.9.1)
+  - CocoaLumberjack/Extensions (1.9.1):
+    - CocoaLumberjack/Core
+  - CoreNode (0.0.1):
+    - CocoaLumberjack (~> 1.9)
+    - PromiseKit/base (~> 0.9)
+    - uv
+  - PromiseKit/base (0.9.14.2):
+    - PromiseKit/Promise
+    - PromiseKit/Until
+    - PromiseKit/When
+  - PromiseKit/Promise (0.9.14.2)
+  - PromiseKit/Until (0.9.14.2):
+    - PromiseKit/Promise
+    - PromiseKit/When
+  - PromiseKit/When (0.9.14.2):
+    - PromiseKit/Promise
+  - SparkInspector (1.2.5)
+  - uv (0.11.27)
+
+DEPENDENCIES:
+  - CoreNode (from `../../`)
+  - SparkInspector (~> 1.2)
+  - uv (from `../../uv/`)
+
+EXTERNAL SOURCES:
+  CoreNode:
+    :path: ../../
+  uv:
+    :path: ../../uv/
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: 94accd5749f5c5d15134c8d50f34a973aed8ef69
+  CoreNode: a5c6fce8bbf109e6f032c4d5f153060fabbb2bad
+  PromiseKit: ecbf5e19bd1d27e8ae16816c54b0b342da756ba6
+  SparkInspector: 0dd3b5ac81812c11d53c21e14c2e5dc0826c1e11
+  uv: 4e3113ca1ace6956df1769e39bcc8d63426f63c4
+
+COCOAPODS: 0.33.1

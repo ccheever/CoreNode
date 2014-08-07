@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0F54D8F1-0953-4815-8F7B-655010D92AE7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>REPL</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>65D3297FEE994D550FF007D60D30E026109B0CCB</key>
+		<string>https://github.com/CoreNodeJS/CoreNode.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Examples/CoreNodeREPL/REPL.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>65D3297FEE994D550FF007D60D30E026109B0CCB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CoreNodeJS/CoreNode.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>65D3297FEE994D550FF007D60D30E026109B0CCB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>65D3297FEE994D550FF007D60D30E026109B0CCB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CoreNode</string>
+		</dict>
+	</array>
+</dict>
+</plist>

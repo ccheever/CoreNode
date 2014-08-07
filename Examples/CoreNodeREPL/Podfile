@@ -1,0 +1,11 @@
+platform :ios, '7.0'
+
+xcodeproj 'REPL/REPL.xcodeproj'
+link_with 'REPL'
+
+# Published CocoaPods
+pod 'SparkInspector', '~> 1.2'
+
+# Local CocoaPods
+pod 'uv', :path => '../../uv/'
+pod 'CoreNode', :path => '../../'
