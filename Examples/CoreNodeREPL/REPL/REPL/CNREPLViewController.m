@@ -8,6 +8,9 @@
 
 #import "CNREPLViewController.h"
 
+#import <JavaScriptCore/JavaScriptCore.h>
+#import <CoreNode/CoreNode.h>
+
 @interface CNREPLViewController ()
 
 @end
@@ -18,6 +21,8 @@
 
     UIView *_keyboardPlaceholderView;
     NSLayoutConstraint *_keyboardConstraint;
+
+    CNRuntime *_runtime;
 
 }
 
@@ -34,7 +39,7 @@
     _inputTextView.text = @"And if you see my reflection in the snow covered hills, then maybe, the landslide will bring you down. Happy birthday Sieg!";
 
     _inputTextView.editable = YES;
-    _inputTextView.text = nil; // @"This is the input text view";
+    _inputTextView.text = @"\"JavaScript here\" + String.fromCharCode(32) + \"will be evaluated\";";
     _inputTextView.font = [UIFont fontWithName:@"LiberationMono" size:13.0];
     _inputTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     _inputTextView.layer.borderWidth = 1.0;
@@ -44,7 +49,7 @@
     _outputTextView = [UITextView new];
 
     //_outputTextView.backgroundColor = [UIColor greenColor];
-    _outputTextView.text = @"When times get bad, when times get rough, won't you lay me down in tall grass and let me do my sutff. Love you mommy.";
+    _outputTextView.text = @"Results of evaluation will appear here";
 
     _outputTextView.editable = NO;
     _outputTextView.font = [UIFont fontWithName:@"LiberationMono" size:13.0];
@@ -79,27 +84,29 @@
     [self installConstraints];
 
     // Set up CoreNode
+    JSContext *context = [[JSContext alloc] initWithVirtualMachine:[[JSVirtualMachine alloc] init]];
+#if defined(__IPHONE_8_0)
+    if ([context respondsToSelector:@selector(setName:)]) {
+        context.name = @"Core Node";
+    }
+#endif
+
+    NSURL *rootUrl = [[NSBundle mainBundle] resourceURL];
+
+    NSURL *mainScriptUrl = [CNRuntime urlWithBase:rootUrl filePath:@""];
+    _runtime = [[CNRuntime alloc] initWithContext:context rootUrl:rootUrl];
+
+#if defined(DEBUG)
+    setenv("NODE_ENV", "development", 1);
+#else
+    setenv("NODE_ENV", "production", 1);
+#endif
+
+    NSLog(@"mainScriptUrl=%@", mainScriptUrl);
+    [_runtime installNodeWithMainScript:mainScriptUrl];
 
 }
 
-
-/*
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    [self.view setNeedsLayout];
-    [self.view setNeedsUpdateConstraints];
-
-    [UIView animateWithDuration:0.5 delay:0.0 options:0 animations:^{
-        [self.view updateConstraintsIfNeeded];
-        [self.view layoutIfNeeded];
-    } completion:nil];
-
-}
- */
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    NSLog(@"didRotateFromInterfaceOrientation");
-    [self.view setNeedsUpdateConstraints];
-}
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 
     NSLog(@"willRotateToInterfaceOrientation");
@@ -179,6 +186,29 @@
 
 - (void)_evalButtonTapped:(UIButton *)sender {
     NSLog(@"_evalButtonTapped");
+
+    JSContext *context = _runtime.context;
+    NSString *script = _inputTextView.text;
+    JSValue *util = [CNRuntime evaluateCallbackScript:@"require('util')" inContext:context];
+    JSValue *result = [CNRuntime evaluateCallbackScript:script inContext:context];
+
+    // TODO: Handle problems with `inspect` not being able to handle the resulting value
+    NSString *inspectedResult = [[util invokeMethod:@"inspect" withArguments:@[result]] toString];
+
+    if (context.exception) {
+        NSString *exceptionText = [context.exception errorString];
+        _outputTextView.textColor = [UIColor redColor];
+        _outputTextView.text = exceptionText;
+        _runtime.context.exception = nil;
+
+
+    } else {
+        _outputTextView.textColor = [UIColor darkTextColor];
+        _outputTextView.text = inspectedResult;
+        _runtime.context[@"_"] = result;
+    }
+
+
 }
 
 - (void)didReceiveMemoryWarning

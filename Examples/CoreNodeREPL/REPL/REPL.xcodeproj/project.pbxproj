@@ -12,6 +12,7 @@
 		BF41A3DE1991EBC100DFF099 /* LiberationMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF41A3DA1991EBC100DFF099 /* LiberationMono-BoldItalic.ttf */; };
 		BF41A3DF1991EBC100DFF099 /* LiberationMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF41A3DB1991EBC100DFF099 /* LiberationMono-Italic.ttf */; };
 		BF41A3E01991EBC100DFF099 /* LiberationMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF41A3DC1991EBC100DFF099 /* LiberationMono-Regular.ttf */; };
+		BFA21F02199421FE00A1DB81 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = BFA21F01199421FE00A1DB81 /* index.js */; };
 		BFD139D319918D4F00139535 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD139D219918D4F00139535 /* Foundation.framework */; };
 		BFD139D519918D4F00139535 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD139D419918D4F00139535 /* CoreGraphics.framework */; };
 		BFD139D719918D4F00139535 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD139D619918D4F00139535 /* UIKit.framework */; };
@@ -44,6 +45,7 @@
 		BF41A3DA1991EBC100DFF099 /* LiberationMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationMono-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BF41A3DB1991EBC100DFF099 /* LiberationMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationMono-Italic.ttf"; sourceTree = "<group>"; };
 		BF41A3DC1991EBC100DFF099 /* LiberationMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LiberationMono-Regular.ttf"; sourceTree = "<group>"; };
+		BFA21F01199421FE00A1DB81 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		BFD139CF19918D4F00139535 /* REPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = REPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD139D219918D4F00139535 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFD139D419918D4F00139535 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +130,7 @@
 		BFD139D819918D4F00139535 /* REPL */ = {
 			isa = PBXGroup;
 			children = (
+				BFA21F01199421FE00A1DB81 /* index.js */,
 				BF41A3D91991EBC100DFF099 /* LiberationMono-Bold.ttf */,
 				BF41A3DA1991EBC100DFF099 /* LiberationMono-BoldItalic.ttf */,
 				BF41A3DB1991EBC100DFF099 /* LiberationMono-Italic.ttf */,
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA21F02199421FE00A1DB81 /* index.js in Resources */,
 				BF41A3DD1991EBC100DFF099 /* LiberationMono-Bold.ttf in Resources */,
 				BFD139E919918D4F00139535 /* Main_iPad.storyboard in Resources */,
 				BFD139EE19918D4F00139535 /* Images.xcassets in Resources */,
